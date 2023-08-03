@@ -37,3 +37,19 @@ console.log(x - y); // 9
 console.log(x * y); // 36
 console.log(x % y); // 0
 console.log(x / y); // 4
+console.log(+true); // concate with + covert the boolean to a number i.e, 1, although true is a truthy value.
+console.log(+""); // concate with - covert the boolean to a number, i.e, 0.
+
+let gameCounter = 100;
+gameCounter++;
+console.log(gameCounter);
+
+let a = 5;
+
+let b = ++a;
+
+console.log(`value of a is ${a} and  value of b is ${b}`);
+
+let num1 = 38;
+let num2 = num1++;
+console.log(`value of num1 is ${num1} and value of num2 is ${num2} `);
