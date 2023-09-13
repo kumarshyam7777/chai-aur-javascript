@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chai aur JavaScript | DOM</title>
+  </head>
+  <body>
+    <ul class="language">
+      <li>JavaScript</li>
+    </ul>
+  </body>
+  <script>
+    function newListElement(languageName) {
+      const li = document.createElement("li");
+      li.innerHTML = languageName;
+      document.querySelector(".language").appendChild(li);
+    }
+    newListElement("Python");
+    newListElement("Java");
+    newListElement("Ruby");
+
+    function optimisedWayAddLang(lannguageName) {
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(lannguageName));
+      document.querySelector(".language").appendChild(li);
+
+      //   document
+      //     .querySelector(".language")
+      //     .appendChild(
+      //       document
+      //         .createElement("li")
+      //         .appendChild(document.createTextNode(lannguageName))
+      //     );
+    }
+    optimisedWayAddLang("C++");
+    optimisedWayAddLang("C");
+
+    // Edit
+    const secondLanguage = document.querySelector("li:nth-child(2)");
+    console.log(secondLanguage);
+    // secondLanguage.innerHTML = "Golang";
+    // secondLanguage.appendChild(document.createTextNode("Golnag"));
+    const newLi = document.createElement("li");
+    newLi.textContent = "Golang";
+    console.log(newLi);
+    //newLi.replaceWith("Golang");
+    secondLanguage.replaceWith(newLi);
+
+    // Edit First Child
+    const firstChild = document.querySelector("li:first-child");
+    // const newList = document.createElement("li");
+    firstChild.outerHTML = "<li>Typescript</li>";
+    console.log(firstChild);
+
+    //Remove
+    const lastElement = document.querySelector("li:last-child");
+    lastElement.remove();
+  </script>
+</html>
